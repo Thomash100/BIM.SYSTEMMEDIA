@@ -112,6 +112,14 @@ Spätere Updates:
 bash scripts/update-pi.sh
 ```
 
+Das Install-Script kann die Website optional mit HTTP Basic Auth schuetzen. Der vorbereitete Benutzername lautet:
+
+```txt
+admin
+```
+
+Das Passwort wird beim Installieren auf dem Raspberry Pi abgefragt und nicht im Repository gespeichert.
+
 ## Nginx
 
 Siehe `nginx.conf.example`. Fuer HTTPS sollte zusaetzlich Certbot, Plesk oder eine bestehende TLS-Verwaltung genutzt werden.

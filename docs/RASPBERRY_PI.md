@@ -51,6 +51,15 @@ cd /opt/systemmedia-website
 bash scripts/install-pi.sh
 ```
 
+Das Install-Script fragt, ob die Website per Benutzername/Passwort geschuetzt werden soll.
+Wenn du bestaetigst, wird dieser Benutzer verwendet:
+
+```txt
+admin
+```
+
+Das Passwort wird nur auf dem Raspberry Pi abgefragt und als Caddy-Hash in `/etc/caddy/Caddyfile` eingetragen. Es wird nicht im GitHub-Repository gespeichert.
+
 Wenn dein Repository privat ist, nutze stattdessen SSH mit Deploy Key:
 
 ```bash
@@ -138,6 +147,12 @@ Diese Datei aus dem Repository verwenden:
 
 ```txt
 Caddyfile.raspberrypi.example
+```
+
+Mit Passwortschutz fuer den Benutzer `admin`:
+
+```txt
+Caddyfile.raspberrypi.auth.example
 ```
 
 Auf den Pi kopieren:
