@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #05070d;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(65, 233, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65, 233, 255, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at 50% 15%, black, transparent 74%);
+}
+
+.section-shell {
+  position: relative;
+  z-index: 1;
+  margin-inline: auto;
+  max-width: 80rem;
+  padding: 6rem 1.25rem;
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 16, 27, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.hero-visual canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.78;
+}
+
+.skyline::before {
+  content: "";
+  display: block;
+  height: 34%;
+  min-height: 120px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 520px 180px;
+  mask-image: linear-gradient(to top, black 58%, transparent 100%);
+}
+
+.skyline-back::before {
+  background-image: linear-gradient(
+    to top,
+    rgba(5, 7, 13, 0.95) 0 42px,
+    transparent 42px 100%
+  ),
+  linear-gradient(90deg,
+    transparent 0 22px,
+    rgba(13, 29, 47, 0.88) 22px 64px,
+    transparent 64px 86px,
+    rgba(13, 29, 47, 0.88) 86px 142px,
+    transparent 142px 170px,
+    rgba(13, 29, 47, 0.88) 170px 236px,
+    transparent 236px 260px,
+    rgba(13, 29, 47, 0.88) 260px 340px,
+    transparent 340px 372px,
+    rgba(13, 29, 47, 0.88) 372px 440px,
+    transparent 440px 520px
+  );
+  filter: blur(1px);
+}
+
+.skyline-front::before {
+  background-image: linear-gradient(
+    to top,
+    rgba(2, 5, 10, 0.98) 0 58px,
+    transparent 58px 100%
+  ),
+  linear-gradient(90deg,
+    rgba(3, 9, 18, 0.95) 0 44px,
+    transparent 44px 72px,
+    rgba(3, 9, 18, 0.95) 72px 124px,
+    transparent 124px 162px,
+    rgba(3, 9, 18, 0.95) 162px 226px,
+    transparent 226px 250px,
+    rgba(3, 9, 18, 0.95) 250px 288px,
+    transparent 288px 326px,
+    rgba(3, 9, 18, 0.95) 326px 410px,
+    transparent 410px 452px,
+    rgba(3, 9, 18, 0.95) 452px 520px
+  );
+}
+
+@media (max-width: 760px), (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-visual canvas {
+    opacity: 0.58;
+  }
+}

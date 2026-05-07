@@ -1,0 +1,52 @@
+@securityHeaders {
+  path *
+}
+
+(systemmedia_headers) {
+  header @securityHeaders {
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)"
+  }
+  encode gzip zstd
+}
+
+www.systemmedia.de {
+  redir https://systemmedia.de{uri} permanent
+}
+
+systemmedia.de {
+  import systemmedia_headers
+  root * /opt/systemmedia-website/dist
+  try_files {path} /index.html
+  file_server
+}
+
+bim.systemmedia.de {
+  import systemmedia_headers
+  root * /opt/systemmedia-website/dist
+  try_files {path} /index.html
+  file_server
+}
+
+ifc.systemmedia.de {
+  import systemmedia_headers
+  root * /opt/systemmedia-website/dist
+  try_files {path} /index.html
+  file_server
+}
+
+automation.systemmedia.de {
+  import systemmedia_headers
+  root * /opt/systemmedia-website/dist
+  try_files {path} /index.html
+  file_server
+}
+
+projects.systemmedia.de {
+  import systemmedia_headers
+  root * /opt/systemmedia-website/dist
+  try_files {path} /index.html
+  file_server
+}
