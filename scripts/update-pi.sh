@@ -24,7 +24,11 @@ npm run build
 
 echo "==> Pruefe Caddy und lade neu"
 sudo caddy validate --config /etc/caddy/Caddyfile
-sudo systemctl reload caddy
+if systemctl is-active --quiet caddy; then
+  sudo systemctl reload caddy
+else
+  sudo systemctl restart caddy
+fi
 
 echo "==> Update fertig."
 echo "Webroot: ${APP_DIR}/dist"

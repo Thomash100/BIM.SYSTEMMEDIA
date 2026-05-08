@@ -63,7 +63,7 @@ else
 fi
 sudo caddy validate --config /etc/caddy/Caddyfile
 sudo systemctl enable caddy
-sudo systemctl reload caddy
+sudo systemctl restart caddy
 
 echo "==> Fertig."
 echo "Webroot: ${APP_DIR}/dist"
