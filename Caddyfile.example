@@ -1,9 +1,5 @@
-@securityHeaders {
-  path *
-}
-
 (systemmedia_headers) {
-  header @securityHeaders {
+  header {
     X-Content-Type-Options "nosniff"
     X-Frame-Options "DENY"
     Referrer-Policy "strict-origin-when-cross-origin"
