@@ -172,7 +172,11 @@ Der Container liefert die gebaute Website intern ueber Caddy aus.
 
 ## Rechtliches
 
-`/impressum` und `/datenschutz` sind bewusst als Platzhalter angelegt. Vor Livegang muessen echte, rechtlich korrekte Inhalte ergaenzt werden.
+- Impressum: https://systemmedia.de/impressum/
+- Datenschutz / DSGVO-Hinweise: https://systemmedia.de/datenschutz/
+- Nutzungsbedingungen und Haftungsausschluss: https://systemmedia.de/nutzungsbedingungen/
+
+Die bereitgestellten Inhalte und Softwarebestandteile dienen, sofern nicht anders angegeben, Test-, Entwicklungs-, Demonstrations- und Evaluierungszwecken. Nutzung auf eigene Verantwortung. Weitere Hinweise stehen in `LEGAL.md`.
 
 ## Wartung
 
