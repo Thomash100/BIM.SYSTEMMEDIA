@@ -21,19 +21,17 @@ npm run build
 
 Das statische Ergebnis liegt danach in `dist/`.
 
-## Deployment per GitHub Actions
+## Build per GitHub Actions
 
-Der Workflow `.github/workflows/deploy.yml` baut bei Push auf `main` und synchronisiert `dist/` per SSH/rsync auf den Server.
+Der Workflow `.github/workflows/deploy.yml` baut bei Push auf `main` die statische Website und stellt `dist/` als GitHub-Artefakt bereit.
 
-Erforderliche GitHub Secrets:
+Download in GitHub:
 
-- `SERVER_HOST`
-- `SERVER_USER`
-- `SERVER_SSH_KEY`
-- `SERVER_PORT`
-- `DEPLOY_PATH` mit Standardwert `/opt/systemmedia-website`
+```txt
+Actions -> Build SYSTEMMEDIA Website -> letzter Run -> Artifacts -> systemmedia-dist
+```
 
-Es werden keine Passwoerter, Tokens oder SSH-Schluessel im Repository gespeichert.
+Dieses Artefakt enthaelt nur die fertige statische Website. Den Inhalt in den Webroot hochladen, zum Beispiel `httpdocs`. SSH-Secrets sind fuer diesen Workflow nicht erforderlich.
 
 ## Serverpfad
 

@@ -1,13 +1,19 @@
-name: Deploy SYSTEMMEDIA Website
+name: Build SYSTEMMEDIA Website
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -16,7 +22,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -25,13 +31,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Prepare SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "${{ secrets.SERVER_PORT }}" "${{ secrets.SERVER_HOST }}" >> ~/.ssh/known_hosts
-
-      - name: Deploy dist with rsync
-        run: |
-          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SERVER_PORT }}" dist/ "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.DEPLOY_PATH }}/dist/"
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: systemmedia-dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
