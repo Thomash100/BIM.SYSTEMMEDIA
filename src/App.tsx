@@ -5,6 +5,7 @@ import Datenschutz from './routes/Datenschutz';
 import IfcSite from './routes/IfcSite';
 import Impressum from './routes/Impressum';
 import MainSite from './routes/MainSite';
+import Nutzungsbedingungen from './routes/Nutzungsbedingungen';
 import ProjectsSite from './routes/ProjectsSite';
 import { getCanonicalHost, getSiteKind, type SiteKind } from './utils/hostname';
 import { useLanguage, type Language } from './utils/language';
@@ -104,6 +105,7 @@ export default function App() {
 
   if (path === '/impressum') return <Impressum />;
   if (path === '/datenschutz') return <Datenschutz />;
+  if (path === '/nutzungsbedingungen' || path === '/haftungsausschluss') return <Nutzungsbedingungen />;
 
   if (kind === 'bim') return <BimSite />;
   if (kind === 'ifc') return <IfcSite />;

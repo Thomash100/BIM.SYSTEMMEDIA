@@ -2,7 +2,7 @@ import { copyFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const distDir = resolve('dist');
-const routes = ['impressum', 'datenschutz'];
+const routes = ['impressum', 'datenschutz', 'nutzungsbedingungen', 'haftungsausschluss'];
 
 await Promise.all(
   routes.map(async (route) => {

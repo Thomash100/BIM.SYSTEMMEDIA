@@ -6,12 +6,14 @@ const footerCopy = {
     claim: 'Digitale Werkzeuge für Planung, BIM, IFC, Automatisierung und technische Gebäudedaten.',
     imprint: 'Impressum',
     privacy: 'Datenschutz',
+    terms: 'Nutzungsbedingungen',
     copyright: 'Alle Rechte vorbehalten.',
   },
   en: {
     claim: 'Digital tools for planning, BIM, IFC, automation and technical building data.',
     imprint: 'Legal Notice',
     privacy: 'Privacy',
+    terms: 'Terms',
     copyright: 'All rights reserved.',
   },
 };
@@ -36,6 +38,9 @@ export default function Footer() {
           </a>
           <a href="/datenschutz" className="hover:text-cyan">
             {t.privacy}
+          </a>
+          <a href="/nutzungsbedingungen" className="hover:text-cyan">
+            {t.terms}
           </a>
           <a href="https://github.com/Thomash100" className="inline-flex items-center gap-2 hover:text-cyan">
             <Github size={16} /> GitHub
