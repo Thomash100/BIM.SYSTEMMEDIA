@@ -9,7 +9,7 @@ import ServiceCard from '../components/ServiceCard';
 import StartLanguageGate from '../components/StartLanguageGate';
 import { projects } from '../data/projects';
 import { services } from '../data/services';
-import { setLanguagePreference, useLanguage, type Language } from '../utils/language';
+import { setLanguagePreference, useLanguage } from '../utils/language';
 
 const Hero3D = lazy(() => import('../components/Hero3D'));
 
@@ -25,6 +25,28 @@ const copy = {
     servicesTitle: 'Technische Plattform statt Portfolio',
     servicesText:
       'Fachliche Planung, Modellqualität, Automatisierung und Weboberflächen greifen in einem System ineinander.',
+    platformEyebrow: 'Systemschichten',
+    platformTitle: 'Vom Gebäudemodell bis zur steuerbaren Anlage',
+    platformText:
+      'SYSTEMMEDIA betrachtet Planung, Modellprüfung, Automation und Weboberflächen als zusammenhängende technische Kette.',
+    platformItems: [
+      {
+        title: 'Model Layer',
+        text: 'Revit-Modelle, Geschosse, Achsen, Bauteile, TGA-Systeme und klare Parameterstrukturen.',
+      },
+      {
+        title: 'Data Layer',
+        text: 'IFC-Klassen, Property Sets, Modellqualität, Sensordaten, Energie- und Statuswerte.',
+      },
+      {
+        title: 'Automation Layer',
+        text: 'Home Assistant, MQTT, lokale Logik, PV-Optimierung und dynamische Betriebsstrategien.',
+      },
+      {
+        title: 'Interface Layer',
+        text: 'Technische Weboberflächen, Dashboards, Projektübersichten und nachvollziehbare Auswertungen.',
+      },
+    ],
     featureItems: [
       {
         label: 'BIM / Revit',
@@ -49,6 +71,15 @@ const copy = {
     projectsTitle: 'Öffentliche Entwicklungsbausteine',
     projectsText: 'Startdaten für Automatisierung, Energieoptimierung und Home-Assistant-Workflows.',
     projectDescriptions: projects.map((project) => project.description),
+    processEyebrow: 'Arbeitsweise',
+    processTitle: 'Planen, prüfen, automatisieren, visualisieren',
+    processText:
+      'Die Plattform ist so aufgebaut, dass neue Fachseiten, Projekte und spätere CMS-Inhalte ohne Datenbankzwang ergänzt werden können.',
+    processItems: [
+      ['Analyse', 'Anforderungen, Modellstruktur, Datenquellen und Zielsysteme werden technisch sortiert.'],
+      ['Prototyp', 'Schnelle statische Oberfläche mit belastbarer Struktur, klaren Inhalten und messbarer Performance.'],
+      ['Integration', 'GitHub, Build-Artefakte, Serverpfade, Caddy/Nginx und spätere Automatisierung greifen sauber zusammen.'],
+    ],
     githubProfile: 'GitHub-Profil öffnen',
     contactEyebrow: 'Kontakt',
     contactTitle: 'Technische Idee, Modell oder Automation?',
@@ -64,6 +95,28 @@ const copy = {
     servicesEyebrow: 'Service Areas',
     servicesTitle: 'A technical platform, not a portfolio',
     servicesText: 'Planning, model quality, automation and web interfaces work together as one technical system.',
+    platformEyebrow: 'System Layers',
+    platformTitle: 'From building model to controllable system',
+    platformText:
+      'SYSTEMMEDIA treats planning, model checking, automation and web interfaces as one connected technical chain.',
+    platformItems: [
+      {
+        title: 'Model Layer',
+        text: 'Revit models, levels, axes, components, MEP systems and clear parameter structures.',
+      },
+      {
+        title: 'Data Layer',
+        text: 'IFC classes, property sets, model quality, sensor data, energy and status values.',
+      },
+      {
+        title: 'Automation Layer',
+        text: 'Home Assistant, MQTT, local logic, PV optimization and dynamic operating strategies.',
+      },
+      {
+        title: 'Interface Layer',
+        text: 'Technical web interfaces, dashboards, project overviews and traceable evaluations.',
+      },
+    ],
     featureItems: [
       {
         label: 'BIM / Revit',
@@ -91,6 +144,15 @@ const copy = {
       'Local data and control concept for Growatt components with a focus on self-consumption, local analysis, MQTT and Home Assistant.',
       'Aquarium lighting control for Home Assistant with automation logic.',
       'Home Assistant HACS integration for electricity-price-aware refrigerator and freezer control with Tibber, Shelly and cockpit dashboards.',
+    ],
+    processEyebrow: 'Workflow',
+    processTitle: 'Plan, check, automate, visualize',
+    processText:
+      'The platform is structured so new specialist sites, projects and future CMS content can be added without a database requirement.',
+    processItems: [
+      ['Analysis', 'Requirements, model structure, data sources and target systems are organized technically.'],
+      ['Prototype', 'Fast static interface with reliable structure, clear content and measurable performance.'],
+      ['Integration', 'GitHub, build artifacts, server paths, Caddy/Nginx and later automation work together cleanly.'],
     ],
     githubProfile: 'Open GitHub profile',
     contactEyebrow: 'Contact',
@@ -150,7 +212,7 @@ export default function MainSite() {
   const localizedServices = useMemo(
     () =>
       language === 'de'
-        ? services
+        ? services.slice(0, 6)
         : services.slice(0, 6).map((service, index) => ({
             ...service,
             title: englishServiceText[index].title,
@@ -229,6 +291,19 @@ export default function MainSite() {
         ))}
       </section>
 
+      <section className="section-shell">
+        <SectionTitle eyebrow={t.platformEyebrow} title={t.platformTitle} text={t.platformText} />
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {t.platformItems.map((item, index) => (
+            <article key={item.title} className="glass-panel rounded-lg p-6">
+              <p className="text-sm font-semibold text-cyan">{String(index + 1).padStart(2, '0')}</p>
+              <h2 className="mt-5 text-xl font-semibold text-white">{item.title}</h2>
+              <p className="mt-3 leading-7 text-slate-400">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="projekte" className="section-shell">
         <SectionTitle
           eyebrow={t.projectsEyebrow}
@@ -247,6 +322,21 @@ export default function MainSite() {
           >
             <Github size={18} /> {t.githubProfile}
           </a>
+        </div>
+      </section>
+
+      <section className="section-shell">
+        <SectionTitle eyebrow={t.processEyebrow} title={t.processTitle} text={t.processText} />
+        <div className="grid gap-4 lg:grid-cols-3">
+          {t.processItems.map(([title, text], index) => (
+            <article key={title} className="rounded-lg border border-white/10 bg-white/[0.035] p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded border border-cyan/30 bg-cyan/10 text-sm font-semibold text-cyan">
+                {index + 1}
+              </div>
+              <h2 className="mt-5 text-2xl font-semibold text-white">{title}</h2>
+              <p className="mt-3 leading-7 text-slate-400">{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 

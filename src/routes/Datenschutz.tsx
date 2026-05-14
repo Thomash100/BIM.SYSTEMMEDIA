@@ -7,20 +7,20 @@ const copy = {
     title: 'Datenschutzerklärung',
     intro:
       'Diese Datenschutzerklärung ist ein Platzhalter. Vor Livegang müssen Hosting, Serverlogs, Kontaktaufnahme, eingesetzte Dienste und alle weiteren Verarbeitungsvorgänge rechtlich geprüft und korrekt beschrieben werden.',
-    controller: 'Verantwortlicher: Platzhalter',
+    controller: 'Verantwortlicher: Thomas Hofmann, Straße der Einheit 259, 09423 Gelenau',
     hosting: 'Hosting: Eigener Linux-Server / Platzhalter für genaue Angaben',
     contact: 'Kontakt: info@systemmedia.de',
-    tracking: 'Cookies/Tracking: Für diese Version nicht vorgesehen.',
+    tracking: 'Cookies/Tracking: Für diese Version nicht vorgesehen; Sprachwahl wird lokal im Browser gespeichert.',
   },
   en: {
     eyebrow: 'Legal Placeholder',
     title: 'Privacy Policy',
     intro:
       'This privacy policy is a placeholder. Before launch, hosting, server logs, contact handling, third-party services and all other processing activities must be legally reviewed and described correctly.',
-    controller: 'Controller: Placeholder',
+    controller: 'Controller: Thomas Hofmann, Straße der Einheit 259, 09423 Gelenau, Germany',
     hosting: 'Hosting: Own Linux server / placeholder for precise details',
     contact: 'Contact: info@systemmedia.de',
-    tracking: 'Cookies/tracking: Not planned for this version.',
+    tracking: 'Cookies/tracking: Not planned for this version; language choice is stored locally in the browser.',
   },
 };
 

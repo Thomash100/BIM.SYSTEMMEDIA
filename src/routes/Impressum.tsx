@@ -7,7 +7,8 @@ const copy = {
     title: 'Impressum',
     intro:
       'Angaben gemäß § 5 TMG. Die Angaben sollten vor Veröffentlichung rechtlich geprüft werden, insbesondere falls die Website geschäftlich oder freiberuflich genutzt wird.',
-    operator: 'Betreiber: Thomas Hofmann',
+    operator: 'Anbieter / Betreiber: Thomas Hofmann',
+    status: 'Status: Privatperson / Freiberufler, vor Veröffentlichung final rechtlich einordnen',
     address: 'Adresse: Straße der Einheit 259, 09423 Gelenau',
     email: 'E-Mail: info@systemmedia.de',
     vat: 'Umsatzsteuer-ID / Registernummer: Nicht angegeben / falls erforderlich ergänzen',
@@ -17,7 +18,8 @@ const copy = {
     title: 'Legal Notice',
     intro:
       'Information according to German legal notice requirements. The information should be reviewed legally before publication, especially if the website is used commercially or freelance.',
-    operator: 'Operator: Thomas Hofmann',
+    operator: 'Provider / operator: Thomas Hofmann',
+    status: 'Status: Private individual / freelancer, final legal classification required before publication',
     address: 'Address: Straße der Einheit 259, 09423 Gelenau, Germany',
     email: 'Email: info@systemmedia.de',
     vat: 'VAT ID / registration number: Not provided / add if required',
@@ -37,6 +39,7 @@ export default function Impressum() {
           <p className="mt-6 max-w-3xl leading-7 text-slate-300">{t.intro}</p>
           <div className="mt-8 space-y-3 text-slate-400">
             <p>{t.operator}</p>
+            <p>{t.status}</p>
             <p>{t.address}</p>
             <p>{t.email}</p>
             <p>{t.vat}</p>

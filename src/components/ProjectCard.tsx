@@ -1,11 +1,16 @@
 import { ExternalLink } from 'lucide-react';
 import type { Project } from '../data/projects';
+import { useLanguage } from '../utils/language';
 
 type ProjectCardProps = {
   project: Project;
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [language] = useLanguage();
+  const githubLabel =
+    language === 'de' ? `${project.name} auf GitHub öffnen` : `Open ${project.name} on GitHub`;
+
   return (
     <article className="rounded-lg border border-white/10 bg-panel/80 p-6 backdrop-blur transition hover:border-cyan/40">
       <div className="flex items-start justify-between gap-4">
@@ -16,7 +21,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <a
           href={project.href}
           className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded border border-white/10 text-slate-300 hover:border-cyan/40 hover:text-cyan"
-          aria-label={`${project.name} auf GitHub öffnen`}
+          aria-label={githubLabel}
         >
           <ExternalLink size={18} />
         </a>

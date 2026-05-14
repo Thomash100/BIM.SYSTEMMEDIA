@@ -4,6 +4,19 @@ Neue statische React/Vite-Website fuer `systemmedia.de` und die Subdomains `bim`
 
 Die App nutzt einen Codebestand und erkennt ueber den Hostnamen, welche Landingpage angezeigt wird. Sie ist fuer den Betrieb auf einem eigenen Linux-Server vorbereitet, zum Beispiel unter `/opt/systemmedia-website`.
 
+## Repository-Struktur
+
+Aktuelle Zuordnung:
+
+- `https://github.com/Thomash100/systemmedia.git` fuer die Website auf dem Webserver
+- `https://github.com/Thomash100/systemmedia-web.git` fuer Raspberry-Pi-Installation und Tests
+- `https://github.com/Thomash100/automation.systemmedia.git` fuer `automation.systemmedia.de`
+- `https://github.com/Thomash100/BIM.SYSTEMMEDIA.git` fuer `bim.systemmedia.de`
+- `https://github.com/Thomash100/ifc.systemmedia.git` fuer `ifc.systemmedia.de`
+- `https://github.com/Thomash100/projects.systemmedia.git` fuer `projects.systemmedia.de`
+
+Die erste Version nutzt weiterhin denselben React-Codebestand. Die Subdomain-Repositories koennen denselben Build enthalten oder spaeter zu getrennten Apps ausgebaut werden.
+
 ## Lokale Entwicklung
 
 ```bash

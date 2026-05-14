@@ -10,7 +10,7 @@ export default function DomainSwitcher() {
   const [language] = useLanguage();
 
   return (
-    <nav className="flex items-center gap-1 rounded border border-white/10 bg-white/[0.03] p-1">
+    <nav className="flex min-w-max items-center gap-1 rounded border border-white/10 bg-white/[0.03] p-1">
       {domainLinks.map((link, index) => (
         <a
           key={link.href}
