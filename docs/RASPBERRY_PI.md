@@ -46,7 +46,7 @@ Wenn dein Repository öffentlich ist:
 ```bash
 sudo mkdir -p /opt/systemmedia-website
 sudo chown -R $USER:www-data /opt/systemmedia-website
-git clone https://github.com/Thomash100/systemmedia-web.git /opt/systemmedia-website
+git clone https://github.com/Thomash100/systemmedia.git /opt/systemmedia-website
 cd /opt/systemmedia-website
 bash scripts/install-pi.sh
 ```
@@ -65,7 +65,7 @@ Wenn dein Repository privat ist, nutze stattdessen SSH mit Deploy Key:
 ```bash
 sudo mkdir -p /opt/systemmedia-website
 sudo chown -R $USER:www-data /opt/systemmedia-website
-git clone git@github.com:Thomash100/systemmedia-web.git /opt/systemmedia-website
+git clone git@github.com:Thomash100/systemmedia.git /opt/systemmedia-website
 cd /opt/systemmedia-website
 bash scripts/install-pi.sh
 ```

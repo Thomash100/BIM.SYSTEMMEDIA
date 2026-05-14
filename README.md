@@ -99,7 +99,7 @@ Direkte Installation aus einem GitHub-Repository auf dem Pi:
 ```bash
 sudo mkdir -p /opt/systemmedia-website
 sudo chown -R $USER:www-data /opt/systemmedia-website
-git clone https://github.com/Thomash100/systemmedia-web.git /opt/systemmedia-website
+git clone https://github.com/Thomash100/systemmedia.git /opt/systemmedia-website
 cd /opt/systemmedia-website
 bash scripts/install-pi.sh
 ```
