@@ -46,6 +46,25 @@ Actions -> Build SYSTEMMEDIA Website -> letzter Run -> Artifacts -> systemmedia-
 
 Dieses Artefakt enthaelt nur die fertige statische Website. Den Inhalt in den Webroot hochladen, zum Beispiel `httpdocs`. SSH-Secrets sind fuer diesen Workflow nicht erforderlich.
 
+## Plesk / Webserver ohne SSH
+
+Wenn Plesk das GitHub-Repository direkt in `httpdocs` auscheckt, darf nicht der Repository-Root als Website ausgeliefert werden. Der Root enthaelt die Vite-Entwicklungsdatei `index.html` mit `/src/main.tsx`; das funktioniert nur lokal mit `npm run dev`.
+
+Richtig ist:
+
+```txt
+Document root: httpdocs/dist
+```
+
+Der Ordner `dist/` ist deshalb fuer Plesk/Git-Deployment im Repository enthalten. Nach jedem Build muss der aktuelle `dist`-Ordner mit committed und gepusht werden.
+
+Kontrolle online:
+
+```txt
+Falsch: <script type="module" src="/src/main.tsx">
+Richtig: <script type="module" crossorigin src="/assets/index-....js">
+```
+
 ## Serverpfad
 
 Empfohlener Pfad:
