@@ -40,6 +40,8 @@ const copy = {
           'Cookies/Tracking: Für diese Version sind keine Analyse-, Marketing- oder Tracking-Cookies vorgesehen.',
           'Die gewählte Sprache wird lokal im Browser gespeichert, damit die Seiten nach der Auswahl weiterhin deutsch oder englisch angezeigt werden.',
           'Die lokale Sprachwahl dient ausschließlich der Bedienbarkeit der Website und nicht der Nutzeranalyse.',
+          'Aktuell sind keine externen Analyse- oder Marketingdienste wie Google Analytics, Meta Pixel, externe Google-Fonts, YouTube-Embeds oder reCAPTCHA vorgesehen.',
+          'Falls später technisch nicht erforderliche Cookies, Tracking-Technologien oder externe Dienste eingebunden werden, muss die Datenschutzerklärung angepasst und eine Einwilligung nach den jeweils geltenden Vorgaben, insbesondere DSGVO und TDDDG, geprüft werden.',
         ],
       },
       {
@@ -103,6 +105,8 @@ const copy = {
           'Cookies/tracking: No analytics, marketing or tracking cookies are planned for this version.',
           'The selected language is stored locally in the browser so pages continue to appear in German or English after selection.',
           'The local language choice is used only for website usability and not for user analytics.',
+          'No external analytics or marketing services such as Google Analytics, Meta Pixel, external Google Fonts, YouTube embeds or reCAPTCHA are planned at this time.',
+          'If technically non-essential cookies, tracking technologies or external services are added later, the privacy policy must be updated and consent requirements under the applicable rules, especially GDPR and the German TDDDG, must be reviewed.',
         ],
       },
       {
