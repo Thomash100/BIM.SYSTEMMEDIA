@@ -3,7 +3,7 @@ export type Project = {
   href: string;
   description: string;
   tags: string[];
-  area: 'Automation' | 'Home Assistant' | 'Energy';
+  area: 'Automation' | 'Home Assistant' | 'Energy' | 'Software';
 };
 
 export const projects: Project[] = [
@@ -29,5 +29,13 @@ export const projects: Project[] = [
       'Home Assistant HACS-Integration für strompreisbewusste Kühlschrank- und Kühltruhensteuerung mit Tibber, Shelly und Cockpit-Dashboards.',
     tags: ['HACS', 'Tibber', 'Shelly', 'Energy', 'Dashboard'],
     area: 'Automation',
+  },
+  {
+    name: 'Projektverwaltung_WTF',
+    href: 'https://github.com/Thomash100/Projektverwaltung_WTF',
+    description:
+      'Developer-Beta einer lokalen Projektverwaltungsplattform für Architektur- und Ingenieurbüros mit Windows-App, Web-Demo und Raspberry-Pi-Sync.',
+    tags: ['Project Management', 'Windows App', 'Raspberry Pi', 'Sync', 'BIM'],
+    area: 'Software',
   },
 ];

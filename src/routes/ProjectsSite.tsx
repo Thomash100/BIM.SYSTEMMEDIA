@@ -77,6 +77,7 @@ const copy = {
       'Local data and control concept for Growatt components with a focus on self-consumption, local analysis, MQTT and Home Assistant.',
       'Aquarium lighting control for Home Assistant with automation logic.',
       'Home Assistant HACS integration for electricity-price-aware refrigerator and freezer control with Tibber, Shelly and cockpit dashboards.',
+      'Developer beta of a local project management platform for architecture and engineering offices with Windows app, web demo and Raspberry Pi sync.',
     ],
   },
 };
