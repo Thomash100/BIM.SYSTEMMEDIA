@@ -1,6 +1,7 @@
 export type Project = {
   name: string;
   href: string;
+  demoHref?: string;
   description: string;
   tags: string[];
   area: 'Automation' | 'Home Assistant' | 'Energy' | 'Software';
@@ -33,6 +34,7 @@ export const projects: Project[] = [
   {
     name: 'Projektverwaltung_WTF',
     href: 'https://github.com/Thomash100/Projektverwaltung_WTF',
+    demoHref: 'https://projects.systemmedia.de/projektverwaltung-wtf/',
     description:
       'Developer-Beta einer lokalen Projektverwaltungsplattform für Architektur- und Ingenieurbüros mit Windows-App, Web-Demo und Raspberry-Pi-Sync.',
     tags: ['Project Management', 'Windows App', 'Raspberry Pi', 'Sync', 'BIM'],
